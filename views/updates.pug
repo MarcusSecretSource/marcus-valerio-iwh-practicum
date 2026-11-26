@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet" href="/css/style.css")
+    body
+        h1 Add a Driver 
+        form(action="update-cobj" method ="POST")
+            p
+                label Name
+                input(type="text" name="name")
+            p
+                label Team
+                input(type="text" name="team")
+            p
+                label Age
+                input(type="number" name="age")
+            button(type="submit") Submit 
+        a(href="/") Return to Homepage
