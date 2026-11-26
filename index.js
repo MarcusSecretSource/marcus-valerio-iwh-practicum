@@ -19,7 +19,7 @@ const headers = {
 // TODO: ROUTE 1 - Create a new app.get route for the homepage to call your custom object data. Pass this data along to the front-end and create a new pug template in the views folder.
 
 app.get('/', async (req, res) => {
-    const url = `https://api.hubapi.com/crm/v3/objects/${2-257209655}?
+    const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}?
     properties=name,team,age`;
     try {
         const response = await axios.get(url, { headers });
@@ -50,7 +50,7 @@ app.post('/update-coobj', async (req, res) => {
         age: req.body.age,
     }
     try {
-    await axios.post('https://api.hubapi.com/crm/v3/objects/${2-257209655}', newRecord, { headers });
+    await axios.post('https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}', newRecord, { headers });
     res.redirect('/');
 } catch (error) {
     console.error(error.response ? error.response.data : error);
