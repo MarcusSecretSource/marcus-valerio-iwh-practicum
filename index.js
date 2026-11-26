@@ -50,7 +50,7 @@ app.post('/update-cobj', async (req, res) => {
         age: req.body.age,
     }
     try {
-    await axios.post('https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}', newRecord, { headers });
+    await axios.post(`https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}`, newRecord, { headers });
     res.redirect('/');
 } catch (error) {
     console.error(error.response ? error.response.data : error);
