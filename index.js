@@ -20,7 +20,7 @@ const headers = {
 
 app.get('/', async (req, res) => {
     const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}?
-    properties=name,team,age`;
+    properties=driver_name,team,age`;
     try {
         const response = await axios.get(url, { headers });
         res.render('homepage', {
@@ -45,7 +45,7 @@ app.get('/update-cobj', (req, res) => {
 
 app.post('/update-cobj', async (req, res) => {
     const newRecord = {
-        name: req.body.name,
+        driver_name: req.body.driver_name,
         team: req.body.team,
         age: req.body.age,
     }
