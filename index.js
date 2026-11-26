@@ -21,7 +21,8 @@ const headers = {
 app.get('/', async (req, res) => {
     const url = `https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}?properties=driver_name,team,age`;
     try {
-        const response = await axios.get(url, { headers });
+        const response = await 
+        axios.get(url, { headers });
         res.render('homepage', {
             title: 'Drivers | Integrationg With Hubspot I Practicum',
             records: response.data.results
