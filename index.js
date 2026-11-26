@@ -45,9 +45,11 @@ app.get('/update-cobj', (req, res) => {
 
 app.post('/update-cobj', async (req, res) => {
     const newRecord = {
-        driver_name: req.body.driver_name,
-        team: req.body.team,
-        age: req.body.age,
+        properties: {
+            driver_name: req.body.driver_name,
+            team: req.body.team,
+            age: req.body.age
+        }
     }
     try {
     await axios.post(`https://api.hubapi.com/crm/v3/objects/${OBJECT_ID}`, newRecord, { headers });
